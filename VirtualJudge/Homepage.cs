@@ -21,11 +21,6 @@ namespace VirtualJudge
             InitializeComponent();
             IntialElements();
         }
-        public Homepage(int SessionID)
-        {
-            InitializeComponent();
-            Session.setUserName(null);
-        }
 
         public void IntialElements()
         {
@@ -33,7 +28,6 @@ namespace VirtualJudge
             {
                 metroTile13.Hide();
                 metroTile14.Hide();
-                MessageBox.Show(Session.getLoggedName());
                 metroPanel1.Hide();
             }
 
@@ -41,16 +35,11 @@ namespace VirtualJudge
             {
                 metroTile13.Show();
                 metroTile14.Show();
-                MessageBox.Show(Session.getLoggedName());
                 metroTile11.Hide();
                 metroTile12.Hide();
                 metroPanel1.Show();
-
-                metroLink1.Text = Session.getLoggedName();
                 metroLink2.Text = "0";
             }
-
-            FormBorderStyle = FormBorderStyle.None;
         }
 
        
