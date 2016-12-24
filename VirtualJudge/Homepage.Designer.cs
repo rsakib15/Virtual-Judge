@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homepage));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroTile12 = new MetroFramework.Controls.MetroTile();
             this.metroTile11 = new MetroFramework.Controls.MetroTile();
             this.metroTile10 = new MetroFramework.Controls.MetroTile();
             this.metroTile9 = new MetroFramework.Controls.MetroTile();
@@ -42,13 +41,12 @@
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.metroTile13 = new MetroFramework.Controls.MetroTile();
             this.metroTile14 = new MetroFramework.Controls.MetroTile();
+            this.metroTile12 = new MetroFramework.Controls.MetroTile();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -75,24 +73,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1171, 552);
             this.panel1.TabIndex = 0;
-            // 
-            // metroTile12
-            // 
-            this.metroTile12.ActiveControl = null;
-            this.metroTile12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroTile12.Location = new System.Drawing.Point(873, 362);
-            this.metroTile12.Name = "metroTile12";
-            this.metroTile12.Size = new System.Drawing.Size(278, 156);
-            this.metroTile12.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile12.TabIndex = 23;
-            this.metroTile12.Text = "Login";
-            this.metroTile12.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile12.TileImage")));
-            this.metroTile12.TileImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.metroTile12.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile12.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.metroTile12.UseSelectable = true;
-            this.metroTile12.UseTileImage = true;
-            this.metroTile12.Click += new System.EventHandler(this.metroTile12_Click);
             // 
             // metroTile11
             // 
@@ -146,6 +126,7 @@
             this.metroTile9.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile9.UseSelectable = true;
             this.metroTile9.UseTileImage = true;
+            this.metroTile9.Click += new System.EventHandler(this.metroTile9_Click);
             // 
             // metroTile8
             // 
@@ -294,16 +275,6 @@
             this.metroTile1.UseTileImage = true;
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.ForeColor = System.Drawing.Color.Coral;
-            this.panel2.Location = new System.Drawing.Point(20, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(40, 38);
-            this.panel2.TabIndex = 1;
-            // 
             // metroTile13
             // 
             this.metroTile13.ActiveControl = null;
@@ -339,59 +310,73 @@
             this.metroTile14.UseStyleColors = true;
             this.metroTile14.UseTileImage = true;
             // 
+            // metroTile12
+            // 
+            this.metroTile12.ActiveControl = null;
+            this.metroTile12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroTile12.Location = new System.Drawing.Point(873, 362);
+            this.metroTile12.Name = "metroTile12";
+            this.metroTile12.Size = new System.Drawing.Size(278, 156);
+            this.metroTile12.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile12.TabIndex = 23;
+            this.metroTile12.Text = "Login";
+            this.metroTile12.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile12.TileImage")));
+            this.metroTile12.TileImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.metroTile12.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile12.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.metroTile12.UseSelectable = true;
+            this.metroTile12.UseTileImage = true;
+            this.metroTile12.Click += new System.EventHandler(this.metroTile12_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.ForeColor = System.Drawing.Color.Coral;
+            this.panel2.Location = new System.Drawing.Point(20, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(40, 38);
+            this.panel2.TabIndex = 1;
+            // 
             // metroLink1
             // 
             this.metroLink1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLink1.Location = new System.Drawing.Point(34, 3);
+            this.metroLink1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.metroLink1.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.metroLink1.Location = new System.Drawing.Point(3, 3);
             this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(128, 26);
+            this.metroLink1.Size = new System.Drawing.Size(290, 26);
             this.metroLink1.TabIndex = 2;
             this.metroLink1.Text = "metroLink1";
+            this.metroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroLink1.UseSelectable = true;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 6);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(58, 19);
-            this.metroLabel1.TabIndex = 3;
-            this.metroLabel1.Text = "Profile : ";
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.metroLabel2);
             this.metroPanel1.Controls.Add(this.metroLink2);
-            this.metroPanel1.Controls.Add(this.metroLabel1);
             this.metroPanel1.Controls.Add(this.metroLink1);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(798, 42);
+            this.metroPanel1.Location = new System.Drawing.Point(706, 42);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(393, 32);
+            this.metroPanel1.Size = new System.Drawing.Size(485, 32);
             this.metroPanel1.TabIndex = 4;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(183, 6);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel2.TabIndex = 5;
-            this.metroLabel2.Text = "Rank : ";
-            // 
             // metroLink2
             // 
             this.metroLink2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLink2.Location = new System.Drawing.Point(193, 3);
+            this.metroLink2.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.metroLink2.FontSize = MetroFramework.MetroLinkSize.Tall;
+            this.metroLink2.Location = new System.Drawing.Point(277, 3);
             this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(147, 26);
+            this.metroLink2.Size = new System.Drawing.Size(169, 26);
             this.metroLink2.TabIndex = 4;
             this.metroLink2.Text = "metroLink2";
+            this.metroLink2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroLink2.UseSelectable = true;
             // 
             // Homepage
@@ -406,7 +391,6 @@
             this.Text = "     Homepage";
             this.panel1.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -430,9 +414,7 @@
         private MetroFramework.Controls.MetroTile metroTile14;
         private MetroFramework.Controls.MetroTile metroTile13;
         private MetroFramework.Controls.MetroLink metroLink1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLink metroLink2;
     }
 }

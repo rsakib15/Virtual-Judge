@@ -25,21 +25,23 @@ namespace VirtualJudge
             this.Hide();
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void metroPanel5_Click(object sender, EventArgs e)
         {
             Homepage home = new Homepage();
             home.Show();
             this.Hide();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void metroPanel6_Click(object sender, EventArgs e)
         {
-
             Database d = new Database();
-            d.UserLogin(metroTextBox1.Text,metroTextBox2.Text);
-            Homepage home = new Homepage();
-            home.Show();
-            this.Hide();
+            bool LoginSuccess = d.UserLogin(metroTextBox1.Text, metroTextBox2.Text);
+            if (LoginSuccess)
+            {
+                Homepage home = new Homepage();
+                home.Show();
+                this.Hide();
+            }
         }
     }
 }

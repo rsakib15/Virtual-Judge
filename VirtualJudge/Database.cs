@@ -43,10 +43,32 @@ namespace VirtualJudge
             }
             thisConnection.Close();
             return false;
-
         }
 
-        public void UserLogin(string Username,string Password)
+        public void createAccount(string s)
+        {
+            SqlConnection thisConnection = new SqlConnection(connection);
+            thisConnection.Open();
+
+            SqlDataAdapter thisAdapter = new SqlDataAdapter("SELECT * FROM accounts", thisConnection);
+            SqlCommandBuilder thisBuilder = new SqlCommandBuilder(thisAdapter);
+            DataSet thisDataSet = new DataSet();
+            thisAdapter.Fill(thisDataSet, "accounts");
+
+            DataRow thisRow = thisDataSet.Tables["accounts"].NewRow();
+            try
+            {
+                thisRow["username"] = s;
+                thisDataSet.Tables["accounts"].Rows.Add(thisRow);
+                thisAdapter.Update(thisDataSet, "accounts");
+            }
+            catch (Exception ex)
+            {
+            }
+            thisConnection.Close();
+        }
+
+        public bool UserLogin(string Username,string Password)
         {
             try
             {
@@ -63,13 +85,84 @@ namespace VirtualJudge
                 {
                     MessageBox.Show("username or password correct");
                     Session.setUserName(thisReader["username"].ToString());
-                    MessageBox.Show(Session.getLoggedName());
+                    return true;
+                    
                 }
                 else
                 {
                     MessageBox.Show("username or password incorrect");
+                    thisConnection.Close();
+                    return false;
+
                 }
-                //this.Close();
+
+                thisConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+             
+            }
+            
+            return false;
+        }
+
+
+        public bool CheckAvailableUser(string Username)
+        {
+            SqlConnection thisConnection = new SqlConnection(connection);
+            thisConnection.Open();
+
+            SqlCommand thisCommand = new SqlCommand();
+            thisCommand.Connection = thisConnection;
+            thisCommand.CommandText = "SELECT * FROM users WHERE username='" + Username +  "'";
+            SqlDataReader thisReader = thisCommand.ExecuteReader();
+
+            if (thisReader.Read())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+
+
+        public void getUserInfo(ref string userid, ref string FirstName, ref string lastName,ref string email,ref string sp,ref string cf,ref string uva)
+        {
+            try
+            {
+
+                SqlConnection thisConnection = new SqlConnection(connection);
+                thisConnection.Open();
+
+                SqlCommand thisCommand = new SqlCommand();
+                thisCommand.Connection = thisConnection;
+                thisCommand.CommandText = "SELECT * FROM users WHERE username='" + Session.getLoggedName() + "'";
+                SqlDataReader thisReader = thisCommand.ExecuteReader();
+
+                if (thisReader.Read())
+                {
+                    userid = (thisReader["username"].ToString());
+                    FirstName =(thisReader["firstname"].ToString());
+                    lastName= (thisReader["lastname"].ToString());
+                    email= (thisReader["email"].ToString());
+                }
+                thisConnection.Close();
+                thisConnection.Open();
+                thisCommand.CommandText = "SELECT * FROM accounts WHERE username='" + Session.getLoggedName() + "'";
+                thisReader = thisCommand.ExecuteReader();
+
+                if (thisReader.Read())
+                {
+                    sp = (thisReader["spojID"].ToString());
+                    cf = (thisReader["codeforcesID"].ToString());
+                    uva = (thisReader["UVAID"].ToString());
+                }
+
                 thisConnection.Close();
 
             }
@@ -78,17 +171,88 @@ namespace VirtualJudge
                 MessageBox.Show(ex.ToString());
             }
 
-
-
         }
 
-        public void GetSessionInformation()
+
+        public bool updateInformation(string Firstname,string Lastname,string PassOne,string PassTwo,string Email)
         {
+            try
+            {
+                SqlConnection thisConnection = new SqlConnection(connection);
+                thisConnection.Open();
 
+                SqlCommand thisCommand = new SqlCommand();
+                thisCommand.Connection = thisConnection;
+
+                if (PassOne==PassTwo && PassTwo!="" && PassOne != "")
+                {
+                    
+                    using (SqlCommand cmd = new SqlCommand("UPDATE users SET password=@pass,firstname=@fn, lastname=@ln,email=@em" +
+                        " WHERE username=@un", thisConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@un", Session.getLoggedName());
+                        cmd.Parameters.AddWithValue("@pass", PassOne);
+                        cmd.Parameters.AddWithValue("@fn", Firstname);
+                        cmd.Parameters.AddWithValue("@ln", Lastname);
+                        cmd.Parameters.AddWithValue("@em", Email);
+                        cmd.ExecuteNonQuery();
+                    }
+                    thisConnection.Close();
+                    return true;
+                }
+                else if(PassOne == PassTwo && PassTwo == "" && PassOne == "")
+                {
+                    using (SqlCommand cmd = new SqlCommand("UPDATE users SET firstname=@fn, lastname=@ln,email=@em" +
+                        " WHERE username=@un", thisConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@un", Session.getLoggedName());
+                        cmd.Parameters.AddWithValue("@fn", Firstname);
+                        cmd.Parameters.AddWithValue("@ln", Lastname);
+                        cmd.Parameters.AddWithValue("@em", Email);
+                        cmd.ExecuteNonQuery();
+                    }
+                    thisConnection.Close();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }             
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
 
+        public void updateJudgeAccount(string sp,string cf,string uv)
+        {
+            SqlConnection thisConnection = new SqlConnection(connection);
+            thisConnection.Open();
 
-        
+            SqlCommand thisCommand = new SqlCommand();
+            thisCommand.Connection = thisConnection;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("UPDATE accounts SET username=@un, codeforcesID=@c,UVAID=@u,spojID=@s" +
+                         " WHERE username=@un", thisConnection))
+                {
+                    cmd.Parameters.AddWithValue("@un", Session.getLoggedName());
+                    cmd.Parameters.AddWithValue("@s", sp);
+                    cmd.Parameters.AddWithValue("@c", cf);
+                    cmd.Parameters.AddWithValue("@u", uv);
+                    cmd.ExecuteNonQuery();
+                }
+                thisConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+               
+            }          
+            
+        }
     }
 }

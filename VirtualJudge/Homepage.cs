@@ -38,11 +38,11 @@ namespace VirtualJudge
                 metroTile11.Hide();
                 metroTile12.Hide();
                 metroPanel1.Show();
-                metroLink2.Text = "0";
+                metroLink1.Text = "Username : " + Session.getLoggedName();
+                metroLink2.Text = "Rank : "+ " 0";
             }
         }
-
-       
+     
         private void metroTile1_Click(object sender, EventArgs e)
         {
             ProblemList problemlist = new ProblemList();
@@ -120,6 +120,20 @@ namespace VirtualJudge
             Homepage home = new Homepage();
             home.Show();
             this.Hide();
+        }
+
+        private void metroTile9_Click(object sender, EventArgs e)
+        {
+            if (Session.getLoggedName() == null)
+            {
+                MessageBox.Show("Please Login First !!");
+            }
+            else
+            {
+                Settings settings = new Settings();
+                settings.Show();
+                this.Hide();
+            }
         }
     }
 }

@@ -36,12 +36,10 @@ namespace VirtualJudge
             DataGridViewColumn columntwo = metroGrid1.Columns[2];
             DataGridViewColumn columnthree = metroGrid1.Columns[3];
 
-
             columnzero.Width = 130;
             columnone.Width = 400;
             columntwo.Width = 213;
             columnthree.Width = 213;
-
 
             for (int i = 0; i <8; i++)
             {

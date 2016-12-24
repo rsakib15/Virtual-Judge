@@ -32,3 +32,5 @@ E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.UpcomingCont
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.ContestHistory.resources
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.RunningContest.resources
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.Categories.resources
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.ProgressForm.resources
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.Settings.resources
