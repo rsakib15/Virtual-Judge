@@ -24,7 +24,6 @@ namespace VirtualJudge
         private int UVAcount;
         List<int> UVAVolume = new List<int>();
 
-
         List<string> CFsSolved = new List<string>();
         List<string> USolved = new List<string>();
 
@@ -56,7 +55,6 @@ namespace VirtualJudge
                     break;
                 }
             }
-
             CodeforcesLastContest = CodeforcesLastContest / 100 + 1;
 
             for (int i = 0; i < CodeforcesLastContest; i++)
@@ -64,8 +62,6 @@ namespace VirtualJudge
                 metroComboBox3.Items.Add(i * 100 + "---" + (i * 100 + 100));
             }
         }
-
-
 
         private void CodeforcesSolved()
         {
@@ -92,7 +88,6 @@ namespace VirtualJudge
             {
                 MessageBox.Show(ex.ToString());
             }
-
         }
 
 
@@ -291,7 +286,7 @@ namespace VirtualJudge
                         else
                         {
                             metroGrid2.Rows.Add
-                               (
+                            (
                                j["problems"][i][1],
                                j["problems"][i][2],
                                Convert.ToInt32(j["problems"][i][6]) + Convert.ToInt32(j["problems"][i][7]) + Convert.ToInt32(j["problems"][i][8]) +
@@ -301,7 +296,7 @@ namespace VirtualJudge
                                Convert.ToInt32(j["problems"][i][18]),
                                j["problems"][i][18],
                                "Unsolved"
-                                );
+                            );
                         }
                         
                     }                 
@@ -328,9 +323,35 @@ namespace VirtualJudge
                 {
                     res = JObject.Parse(results["result"]["problems"][i].ToString());
                     if(SearchText== res["contestId"].ToString() || SearchText == res["name"].ToString())
-                    { 
-                        metroGrid1.Rows.Add(res["contestId"].ToString(), res["index"].ToString(), res["name"].ToString());
-                        found = true;
+                    {
+                        string str = Regex.Replace(res["tags"].ToString(), @"\t|\n|\r", "");
+                        str = str.Replace("[", string.Empty).Replace("]", string.Empty);
+
+                        if (CFsSolved.Contains(res["contestId"].ToString() + res["index"].ToString()))
+                        {
+                            metroGrid1.Rows.Add
+                             (
+                            res["contestId"].ToString(),
+                            res["index"].ToString(),
+                            res["name"].ToString(),
+                            "Solved",
+                            str.Replace("\"", string.Empty)
+                            );
+                        }
+                        else
+                        {
+                            metroGrid1.Rows.Add
+                             (
+                            res["contestId"].ToString(),
+                            res["index"].ToString(),
+                            res["name"].ToString(),
+                            "Unsolved",
+                            str.Replace("\"", string.Empty)
+
+                            );
+                        }
+
+                            found = true;
                     }                       
                 }
 
@@ -353,7 +374,36 @@ namespace VirtualJudge
                     {
                         if (SearchText == j["problems"][i][1].ToString() || SearchText == j["problems"][i][2].ToString())
                         {
-                            metroGrid2.Rows.Add(j["problems"][i][1], j["problems"][i][2], j["problems"][i][3], j["problems"][i][4]);
+                            if (USolved.Contains(j["problems"][i][0].ToString()))
+                            {
+                                metroGrid2.Rows.Add
+                                   (
+                                   j["problems"][i][1],
+                                   j["problems"][i][2],
+                                   Convert.ToInt32(j["problems"][i][6]) + Convert.ToInt32(j["problems"][i][7]) + Convert.ToInt32(j["problems"][i][8]) +
+                                   Convert.ToInt32(j["problems"][i][9]) + Convert.ToInt32(j["problems"][i][10]) + Convert.ToInt32(j["problems"][i][11]) +
+                                   +Convert.ToInt32(j["problems"][i][12]) + Convert.ToInt32(j["problems"][i][13]) + Convert.ToInt32(j["problems"][i][14]) +
+                                   Convert.ToInt32(j["problems"][i][15]) + Convert.ToInt32(j["problems"][i][16]) + Convert.ToInt32(j["problems"][i][17]) +
+                                   Convert.ToInt32(j["problems"][i][18]),
+                                   j["problems"][i][18],
+                                   "Solved"
+                                    );
+                            }
+                            else
+                            {
+                                metroGrid2.Rows.Add
+                                (
+                                   j["problems"][i][1],
+                                   j["problems"][i][2],
+                                   Convert.ToInt32(j["problems"][i][6]) + Convert.ToInt32(j["problems"][i][7]) + Convert.ToInt32(j["problems"][i][8]) +
+                                   Convert.ToInt32(j["problems"][i][9]) + Convert.ToInt32(j["problems"][i][10]) + Convert.ToInt32(j["problems"][i][11]) +
+                                   +Convert.ToInt32(j["problems"][i][12]) + Convert.ToInt32(j["problems"][i][13]) + Convert.ToInt32(j["problems"][i][14]) +
+                                   Convert.ToInt32(j["problems"][i][15]) + Convert.ToInt32(j["problems"][i][16]) + Convert.ToInt32(j["problems"][i][17]) +
+                                   Convert.ToInt32(j["problems"][i][18]),
+                                   j["problems"][i][18],
+                                   "Unsolved"
+                                );
+                            }
                             found = true;
                         }
                        
@@ -489,6 +539,20 @@ namespace VirtualJudge
                     ProblemCodeforces();
                 }
             }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            const string message = "Are you sure to Exit the Application?";
+            const string caption = "Exit Virtual Judge";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+                Environment.Exit(0);
+            else
+                e.Cancel = (result == DialogResult.No);
         }
     }
 }
