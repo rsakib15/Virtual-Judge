@@ -48,16 +48,13 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.axAcroPDF1);
             this.panel1.Controls.Add(this.metroPanel1);
             this.panel1.Controls.Add(this.webBrowser1);
             this.panel1.Controls.Add(this.metroPanel6);
@@ -302,15 +299,6 @@
             this.panel2.TabIndex = 5;
             this.panel2.Click += new System.EventHandler(this.panel2_Click);
             // 
-            // axAcroPDF1
-            // 
-            this.axAcroPDF1.Enabled = true;
-            this.axAcroPDF1.Location = new System.Drawing.Point(17, 128);
-            this.axAcroPDF1.Name = "axAcroPDF1";
-            this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
-            this.axAcroPDF1.Size = new System.Drawing.Size(1118, 528);
-            this.axAcroPDF1.TabIndex = 16;
-            // 
             // ProblemDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,7 +312,6 @@
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel6.ResumeLayout(false);
             this.metroPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,6 +337,5 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private AxAcroPDFLib.AxAcroPDF axAcroPDF1;
     }
 }

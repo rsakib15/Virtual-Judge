@@ -39,3 +39,5 @@ E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\AxInterop.AcroPDFLib.dll
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\Interop.AcroPDFLib.dll
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\AxInterop.AcroPDFLib.dll
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.csproj.ResolveComReference.cache
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\asprise-ocr-dll-bundle-32.dll
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\asprise-ocr-dll-bundle-64.dll

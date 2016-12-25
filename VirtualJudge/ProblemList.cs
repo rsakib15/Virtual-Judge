@@ -429,12 +429,29 @@ namespace VirtualJudge
 
         private void metroGrid1_DoubleClick(object sender, EventArgs e)
         {
-            string firstCellValue = metroGrid1[0, metroGrid1.CurrentRow.Index].Value.ToString();
-            string secondCellValue = metroGrid1[1, metroGrid1.CurrentRow.Index].Value.ToString();
-            string url = "http://codeforces.com/contest/" + firstCellValue + "/problem/" + secondCellValue;
-            ProblemDescription problemdescription = new ProblemDescription(url);
-            problemdescription.Show();
-            this.Hide();
+            if (metroComboBox1.Text == "Codeforces")
+            {
+                string firstCellValue = metroGrid1[0, metroGrid1.CurrentRow.Index].Value.ToString();
+                string secondCellValue = metroGrid1[1, metroGrid1.CurrentRow.Index].Value.ToString();
+                string url = "http://codeforces.com/contest/" + firstCellValue + "/problem/" + secondCellValue;
+                ProblemDescription problemdescription = new ProblemDescription(url, "Codeforces");
+                problemdescription.Show();
+                this.Hide();
+            }
+
+        }
+
+        private void metroGrid2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (metroComboBox1.Text == "UVA")
+            {
+                string firstCellValue = metroGrid1[0, metroGrid1.CurrentRow.Index].Value.ToString();
+                string secondCellValue = metroGrid1[1, metroGrid1.CurrentRow.Index].Value.ToString();
+                string url = "http://codeforces.com/contest/" + firstCellValue + "/problem/" + secondCellValue;
+                ProblemDescription problemdescription = new ProblemDescription(url, "UVA");
+                problemdescription.Show();
+                this.Hide();
+            }
         }
 
         private void metroPanel4_Click(object sender, EventArgs e)
@@ -554,5 +571,7 @@ namespace VirtualJudge
             else
                 e.Cancel = (result == DialogResult.No);
         }
+
+      
     }
 }

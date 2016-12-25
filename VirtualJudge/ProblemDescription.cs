@@ -18,12 +18,15 @@ namespace VirtualJudge
     public partial class ProblemDescription : MetroFramework.Forms.MetroForm
     {
         private string URL;
+        private string judge;
 
-        public ProblemDescription(string url)
+        public ProblemDescription(string url,string judge)
         {
-            URL = url;
+            this.URL = url;
+            this.judge = judge;
             InitializeComponent();   
             getData();
+            MessageBox.Show(judge);
         }
 
 
@@ -44,26 +47,35 @@ namespace VirtualJudge
 
         private void getData()
         {
-            HtmlWeb web = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument doc = web.Load(URL);
-         
-            HtmlNodeCollection header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[1]");
-
-
-            metroLabel6.Text = header[0].InnerText.Remove(0, 3);
-            header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[2]");
-            metroLabel7.Text = header[0].InnerText.Remove(0,19);
-            header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[3]");
-            metroLabel8.Text = header[0].InnerText.Remove(0, 21);
-            header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[4]");
-            metroLabel10.Text = header[0].InnerText.Remove(0, 5); ;
-            header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[5]");
-            metroLabel11.Text = header[0].InnerText.Remove(0, 6); ;
-
-            foreach (HtmlNode cell in doc.DocumentNode.SelectNodes("//div[contains(@class,'problem-statement')]"))
+            if (judge == "Codeforces")
             {
-                webBrowser1.DocumentText = cell.InnerHtml;
+                HtmlWeb web = new HtmlWeb();
+                HtmlAgilityPack.HtmlDocument doc = web.Load(URL);
+
+                HtmlNodeCollection header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[1]");
+
+
+                metroLabel6.Text = header[0].InnerText.Remove(0, 3);
+                header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[2]");
+                metroLabel7.Text = header[0].InnerText.Remove(0, 19);
+                header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[3]");
+                metroLabel8.Text = header[0].InnerText.Remove(0, 21);
+                header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[4]");
+                metroLabel10.Text = header[0].InnerText.Remove(0, 5); ;
+                header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[5]");
+                metroLabel11.Text = header[0].InnerText.Remove(0, 6); ;
+
+                foreach (HtmlNode cell in doc.DocumentNode.SelectNodes("//div[contains(@class,'problem-statement')]"))
+                {
+                    webBrowser1.DocumentText = cell.InnerHtml;
+                }
             }
+
+            else if(judge == "UVA")
+            {
+                metroLabel6.Text = "wait";
+            }
+            
         }
 
         private void panel2_Click(object sender, EventArgs e)
@@ -85,21 +97,11 @@ namespace VirtualJudge
 
         private void metroPanel4_Click(object sender, EventArgs e)
         {
-            //favour
-            OpenFileDialog open = new OpenFileDialog();
-
-            //byte[] GenItineraryResult = myService.CreateReport(); //returns created report as an byte array
-            using ())
+            if (judge == "UVA")
             {
-                fs.Write(GenItineraryResult, 0, GenItineraryResult.Length);
+                webBrowser1.Navigate(@"E:\MY_WORKPLACE\C#\VirtualJudge\problems\PropositionalLogic.pdf");
             }
-            FileStream fs = new FileStream(@"c:\Report.pdf", FileMode.Create;
-
-            if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                axAcroPDF1.src = fs;
-            }
-
+            
 
         }
 
