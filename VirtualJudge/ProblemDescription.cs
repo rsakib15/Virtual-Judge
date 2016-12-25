@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace VirtualJudge
 {
@@ -84,13 +85,20 @@ namespace VirtualJudge
         private void metroPanel4_Click(object sender, EventArgs e)
         {
             //favour
+            OpenFileDialog open = new OpenFileDialog();
+
+            if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                axAcroPDF1.src = open.FileName;
+            }
+
+
         }
 
         private void metroPanel5_Click(object sender, EventArgs e)
         {
             //relead
-            this.Hide();
-            this.Show();
+            getData();
         }
 
         private void metroPanel10_Click(object sender, EventArgs e)

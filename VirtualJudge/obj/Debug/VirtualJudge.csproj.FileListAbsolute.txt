@@ -34,3 +34,8 @@ E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.RunningConte
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.Categories.resources
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.ProgressForm.resources
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.Settings.resources
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\Interop.AcroPDFLib.dll
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\AxInterop.AcroPDFLib.dll
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\Interop.AcroPDFLib.dll
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\AxInterop.AcroPDFLib.dll
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.csproj.ResolveComReference.cache
