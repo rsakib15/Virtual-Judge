@@ -25,8 +25,6 @@ E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.Contest.reso
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.Users.resources
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\WordSearch.exe
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\WordSearch.pdb
-E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\PagedList.dll
-E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\PagedList.xml
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.Status.resources
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.UpcomingContest.resources
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.ContestHistory.resources
@@ -39,5 +37,5 @@ E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\AxInterop.AcroPDFLib.dll
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\Interop.AcroPDFLib.dll
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\AxInterop.AcroPDFLib.dll
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.csproj.ResolveComReference.cache
-E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\asprise-ocr-dll-bundle-32.dll
-E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\bin\Debug\asprise-ocr-dll-bundle-64.dll
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.Rank.resources
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.SubmitBrowser.resources

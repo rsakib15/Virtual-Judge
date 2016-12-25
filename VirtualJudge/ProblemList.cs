@@ -10,7 +10,6 @@ using HtmlAgilityPack;
 using System.Net;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
-using PagedList;
 using System.IO;
 using System.Threading;
 using System.Text.RegularExpressions;

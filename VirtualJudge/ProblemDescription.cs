@@ -95,7 +95,9 @@ namespace VirtualJudge
 
         private void metroPanel3_Click(object sender, EventArgs e)
         {
-            //submit
+            SubmitBrowser submit = new SubmitBrowser();
+            submit.Show();
+
         }
 
         private void metroPanel4_Click(object sender, EventArgs e)
