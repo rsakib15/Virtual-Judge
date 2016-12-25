@@ -551,15 +551,14 @@ namespace VirtualJudge
         {
             const string message = "Are you sure to Exit the Application?";
             const string caption = "Exit Virtual Judge";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
+            var result = MessageBox.Show(message, caption,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
                 Environment.Exit(0);
             else
                 e.Cancel = (result == DialogResult.No);
         }
+
 
         private void metroGrid2_DoubleClick(object sender, EventArgs e)
         {
@@ -577,8 +576,7 @@ namespace VirtualJudge
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }
-            
+            }           
         }
     }
 }
