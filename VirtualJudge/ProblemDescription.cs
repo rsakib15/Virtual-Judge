@@ -102,7 +102,7 @@ namespace VirtualJudge
         {
             if (judge == "UVA")
             {
-                webBrowser1.Navigate(@"E:\MY_WORKPLACE\C#\VirtualJudge\problems\PropositionalLogic.pdf");
+                
             }
             
 
@@ -110,30 +110,20 @@ namespace VirtualJudge
 
         private void metroPanel5_Click(object sender, EventArgs e)
         {
-            //relead
             getData();
         }
 
-        private void metroPanel10_Click(object sender, EventArgs e)
-        {
-             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void metroPanel9_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             const string message = "Are you sure to Exit the Application?";
             const string caption = "Exit Virtual Judge";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
+            var result = MessageBox.Show(message, caption,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
                 Environment.Exit(0);
+            else
+                e.Cancel = (result == DialogResult.No);
         }
 
     }
