@@ -12,6 +12,7 @@ using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 
 namespace VirtualJudge
 {
@@ -73,7 +74,9 @@ namespace VirtualJudge
 
             else if(judge == "UVA")
             {
-                metroLabel6.Text = "wait";
+                string u = URL + ".pdf";
+                MessageBox.Show(u);
+                webBrowser1.Navigate(u);
             }
             
         }
