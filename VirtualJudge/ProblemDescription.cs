@@ -11,6 +11,7 @@ using MetroFramework;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using System.IO;
 
 namespace VirtualJudge
 {
@@ -87,9 +88,16 @@ namespace VirtualJudge
             //favour
             OpenFileDialog open = new OpenFileDialog();
 
+            //byte[] GenItineraryResult = myService.CreateReport(); //returns created report as an byte array
+            using ())
+            {
+                fs.Write(GenItineraryResult, 0, GenItineraryResult.Length);
+            }
+            FileStream fs = new FileStream(@"c:\Report.pdf", FileMode.Create;
+
             if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                axAcroPDF1.src = open.FileName;
+                axAcroPDF1.src = fs;
             }
 
 
