@@ -123,6 +123,12 @@ namespace VirtualJudge
                     MessageBox.Show(tag);
                     d.addTodo("Codeforces", problemNumber, index, metroLabel6.Text, tag);
                 }
+
+                if (judge == "UVA")
+                {
+                    MessageBox.Show(tag);
+                    d.addTodo("UVA", problemNumber, index, metroLabel6.Text, tag);
+                }
             }
             
         }
