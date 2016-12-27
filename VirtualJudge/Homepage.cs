@@ -39,7 +39,6 @@ namespace VirtualJudge
                 metroTile12.Hide();
                 metroPanel1.Show();
                 metroLink1.Text = "Username : " + Session.getLoggedName();
-                metroLink2.Text = "Rank : "+ " 0";
             }
         }
      

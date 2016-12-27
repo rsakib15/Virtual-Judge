@@ -47,7 +47,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLink2 = new MetroFramework.Controls.MetroLink();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -344,7 +343,7 @@
             this.metroLink1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroLink1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.metroLink1.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink1.Location = new System.Drawing.Point(3, 3);
+            this.metroLink1.Location = new System.Drawing.Point(33, 2);
             this.metroLink1.Name = "metroLink1";
             this.metroLink1.Size = new System.Drawing.Size(290, 26);
             this.metroLink1.TabIndex = 2;
@@ -354,31 +353,17 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.metroLink2);
             this.metroPanel1.Controls.Add(this.metroLink1);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(706, 42);
+            this.metroPanel1.Location = new System.Drawing.Point(839, 42);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(485, 32);
+            this.metroPanel1.Size = new System.Drawing.Size(352, 32);
             this.metroPanel1.TabIndex = 4;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // metroLink2
-            // 
-            this.metroLink2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLink2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.metroLink2.FontSize = MetroFramework.MetroLinkSize.Tall;
-            this.metroLink2.Location = new System.Drawing.Point(277, 3);
-            this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(169, 26);
-            this.metroLink2.TabIndex = 4;
-            this.metroLink2.Text = "metroLink2";
-            this.metroLink2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.metroLink2.UseSelectable = true;
             // 
             // Homepage
             // 
@@ -416,6 +401,5 @@
         private MetroFramework.Controls.MetroTile metroTile13;
         private MetroFramework.Controls.MetroLink metroLink1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLink metroLink2;
     }
 }
