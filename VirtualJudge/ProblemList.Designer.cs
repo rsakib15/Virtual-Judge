@@ -182,8 +182,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.metroGrid2.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.metroGrid2, "metroGrid2");
             this.metroGrid2.EnableHeadersVisualStyles = false;
+            resources.ApplyResources(this.metroGrid2, "metroGrid2");
             this.metroGrid2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid2.HighLightPercentage = 0.3F;
             this.metroGrid2.MultiSelect = false;
@@ -278,8 +278,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
-            resources.ApplyResources(this.metroGrid1, "metroGrid1");
             this.metroGrid1.EnableHeadersVisualStyles = false;
+            resources.ApplyResources(this.metroGrid1, "metroGrid1");
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.HighLightPercentage = 0.3F;
             this.metroGrid1.MultiSelect = false;

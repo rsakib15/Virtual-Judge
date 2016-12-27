@@ -167,6 +167,12 @@
     <Compile Include="SubmitBrowser.Designer.cs">
       <DependentUpon>SubmitBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToDoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToDoList.Designer.cs">
+      <DependentUpon>ToDoList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpcomingContest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubmitBrowser.resx">
       <DependentUpon>SubmitBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToDoList.resx">
+      <DependentUpon>ToDoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpcomingContest.resx">
       <DependentUpon>UpcomingContest.cs</DependentUpon>

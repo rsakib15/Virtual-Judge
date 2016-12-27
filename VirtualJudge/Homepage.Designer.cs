@@ -53,7 +53,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.metroTile11);
             this.panel1.Controls.Add(this.metroTile10);
             this.panel1.Controls.Add(this.metroTile9);
             this.panel1.Controls.Add(this.metroTile8);
@@ -67,6 +66,7 @@
             this.panel1.Controls.Add(this.metroTile13);
             this.panel1.Controls.Add(this.metroTile14);
             this.panel1.Controls.Add(this.metroTile12);
+            this.panel1.Controls.Add(this.metroTile11);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(20, 60);
             this.panel1.Name = "panel1";
@@ -309,6 +309,7 @@
             this.metroTile14.UseSelectable = true;
             this.metroTile14.UseStyleColors = true;
             this.metroTile14.UseTileImage = true;
+            this.metroTile14.Click += new System.EventHandler(this.metroTile14_Click);
             // 
             // metroTile12
             // 

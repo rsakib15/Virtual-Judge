@@ -155,5 +155,12 @@ namespace VirtualJudge
             rank.Show();
             this.Hide();
         }
+
+        private void metroTile14_Click(object sender, EventArgs e)
+        {
+            ToDoList todo = new ToDoList();
+            this.Hide();
+            todo.Show();
+        }
     }
 }

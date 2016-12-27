@@ -312,17 +312,14 @@
   <data name="Column1.HeaderText" xml:space="preserve">
     <value>Status</value>
   </data>
-  <data name="metroGrid2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="metroGrid2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11px</value>
   </data>
   <data name="metroGrid2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 43</value>
   </data>
   <data name="metroGrid2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1056, 480</value>
+    <value>998, 437</value>
   </data>
   <data name="metroGrid2.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -369,17 +366,14 @@
   <data name="Column4.HeaderText" xml:space="preserve">
     <value>Tag</value>
   </data>
-  <data name="metroGrid1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="metroGrid1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11px</value>
   </data>
   <data name="metroGrid1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 43</value>
   </data>
   <data name="metroGrid1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1056, 480</value>
+    <value>1012, 437</value>
   </data>
   <data name="metroGrid1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>

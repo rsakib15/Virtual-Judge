@@ -39,3 +39,4 @@ E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\AxInterop.AcroPDFLib.dll
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.csproj.ResolveComReference.cache
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.Rank.resources
 E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.SubmitBrowser.resources
+E:\MY_WORKPLACE\C#\VirtualJudge\VirtualJudge\obj\Debug\VirtualJudge.ToDoList.resources
