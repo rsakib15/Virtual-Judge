@@ -255,7 +255,8 @@ namespace VirtualJudge
         }
 
 
-        public void getAlluserInformation(ref string username,ref string Name,ref string cfID,ref string uvaid)
+
+        public void getAlluserInformation(ref string username, ref string Name, ref string cfID, ref string uvaid)
         {
             try
             {
@@ -271,9 +272,9 @@ namespace VirtualJudge
                 if (thisReader.Read())
                 {
                     username = (thisReader["username"].ToString());
-                    Name = (thisReader["firstname"].ToString())+ (thisReader["lastname"].ToString());
+                    Name = (thisReader["firstname"].ToString()) + (thisReader["lastname"].ToString());
                     cfID = thisReader["codeforcesID"].ToString();
-                    uvaid=thisReader["UVAID"].ToString();
+                    uvaid = thisReader["UVAID"].ToString();
                 }
                 thisConnection.Close();
 
@@ -283,5 +284,36 @@ namespace VirtualJudge
                 MessageBox.Show(ex.ToString());
             }
         }
+
+
+        public int getnumberofuser()
+        {
+            int c=0;
+            try
+            {
+
+                SqlConnection thisConnection = new SqlConnection(connection);
+                thisConnection.Open();
+
+                SqlCommand thisCommand = new SqlCommand();
+                thisCommand.Connection = thisConnection;
+                thisCommand.CommandText = "SELECT COUNT(username) as usercount FROM users";
+                SqlDataReader thisReader = thisCommand.ExecuteReader();
+
+                if (thisReader.Read())
+                {
+                    c = Convert.ToInt32(thisReader["usercount"]);
+                }
+                thisConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return c;
+        }
+
+
     }
 }
