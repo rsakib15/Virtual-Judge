@@ -26,6 +26,9 @@ namespace VirtualJudge
         List<string> CFsSolved = new List<string>();
         List<string> USolved = new List<string>();
 
+        string cftag="-";
+        string uvatag = "-";
+
         public ProblemList()
         {
             InitializeComponent();
@@ -162,8 +165,9 @@ namespace VirtualJudge
                     break;
                 }
 
-                string str = Regex.Replace(res["tags"].ToString(), @"\t|\n|\r", "");
-                str = str.Replace("[", string.Empty).Replace("]", string.Empty);
+                cftag = Regex.Replace(res["tags"].ToString(), @"\t|\n|\r", "");
+                cftag = cftag.Replace("[", string.Empty).Replace("]", string.Empty);
+                cftag = cftag.Replace("\"", string.Empty);
 
                 if ((Convert.ToInt32(res["contestId"])) - p < 100 && (Convert.ToInt32(res["contestId"])) - p >= 0)
                 {
@@ -175,7 +179,7 @@ namespace VirtualJudge
                         res["index"].ToString(),
                         res["name"].ToString(),
                         "Solved",
-                        str.Replace("\"", string.Empty)
+                        cftag
                         );
                     }
                     else
@@ -186,7 +190,7 @@ namespace VirtualJudge
                         res["index"].ToString(),
                         res["name"].ToString(),
                         "Unsolved",
-                        str.Replace("\"", string.Empty)
+                        cftag
 
                         );
                     }
@@ -312,8 +316,9 @@ namespace VirtualJudge
                     res = JObject.Parse(results["result"]["problems"][i].ToString());
                     if(SearchText== res["contestId"].ToString() || SearchText == res["name"].ToString())
                     {
-                        string str = Regex.Replace(res["tags"].ToString(), @"\t|\n|\r", "");
-                        str = str.Replace("[", string.Empty).Replace("]", string.Empty);
+                        cftag = Regex.Replace(res["tags"].ToString(), @"\t|\n|\r", "");
+                        cftag = cftag.Replace("[", string.Empty).Replace("]", string.Empty);
+                        cftag = cftag.Replace("\"", string.Empty);
 
                         if (CFsSolved.Contains(res["contestId"].ToString() + res["index"].ToString()))
                         {
@@ -323,7 +328,7 @@ namespace VirtualJudge
                             res["index"].ToString(),
                             res["name"].ToString(),
                             "Solved",
-                            str.Replace("\"", string.Empty)
+                            cftag
                             );
                         }
                         else
@@ -334,7 +339,7 @@ namespace VirtualJudge
                             res["index"].ToString(),
                             res["name"].ToString(),
                             "Unsolved",
-                            str.Replace("\"", string.Empty)
+                            cftag
 
                             );
                         }
@@ -422,7 +427,8 @@ namespace VirtualJudge
                 string firstCellValue = metroGrid1[0, metroGrid1.CurrentRow.Index].Value.ToString();
                 string secondCellValue = metroGrid1[1, metroGrid1.CurrentRow.Index].Value.ToString();
                 string url = "http://codeforces.com/contest/" + firstCellValue + "/problem/" + secondCellValue;
-                ProblemDescription problemdescription = new ProblemDescription(url, "Codeforces");
+
+                ProblemDescription problemdescription = new ProblemDescription(url, "Codeforces",firstCellValue,cftag);
                 problemdescription.Show();
                 this.Hide();
             }
@@ -556,7 +562,7 @@ namespace VirtualJudge
                 {
                     string firstCellValue = metroGrid2[0, metroGrid2.CurrentRow.Index].Value.ToString();
                     string url = "https://uva.onlinejudge.org/external/" + metroComboBox2.Text + "/" + firstCellValue;
-                    ProblemDescription problemdescription = new ProblemDescription(url, "UVA");
+                    ProblemDescription problemdescription = new ProblemDescription(url, "UVA",firstCellValue,uvatag);
                     problemdescription.Show();
                     this.Hide();
                 }

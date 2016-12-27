@@ -22,11 +22,15 @@ namespace VirtualJudge
         private string judge;
 
         private string index;
+        private string problemNumber;
+        private string tag;
 
-        public ProblemDescription(string url,string judge)
+        public ProblemDescription(string url,string judge,string prblemNumber,string tag)
         {
             this.URL = url;
             this.judge = judge;
+            this.problemNumber = prblemNumber;
+            this.tag = tag;
             InitializeComponent();   
             getData();
             MessageBox.Show(judge);
@@ -58,6 +62,10 @@ namespace VirtualJudge
                 HtmlNodeCollection header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[1]");
 
                 metroLabel6.Text = header[0].InnerText.Remove(0, 3);
+                index = header[0].InnerText;
+                index = index[0].ToString();
+
+
                 header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[2]");
                 metroLabel7.Text = header[0].InnerText.Remove(0, 19);
                 header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[3]");
@@ -103,14 +111,20 @@ namespace VirtualJudge
         private void metroPanel4_Click(object sender, EventArgs e)
         {
             Database d = new Database();
-
-            if (judge == "Codeforces")
+            if(Session.getLoggedName()==null || Session.getLoggedName()=="")
             {
-                d.addTodo("Codeforces", metroLabel6.Text, "A", "B");
+                MessageBox.Show("Please Login First");
+                
+            }
+            else
+            {
+                if (judge == "Codeforces")
+                {
+                    MessageBox.Show(tag);
+                    d.addTodo("Codeforces", problemNumber, index, metroLabel6.Text, tag);
+                }
             }
             
-            
-
         }
 
         private void metroPanel5_Click(object sender, EventArgs e)

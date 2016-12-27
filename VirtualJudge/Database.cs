@@ -255,7 +255,6 @@ namespace VirtualJudge
         }
 
 
-
         public void getAlluserInformation(ref string username, ref string Name, ref string cfID, ref string uvaid)
         {
             try
@@ -314,12 +313,34 @@ namespace VirtualJudge
             return c;
         }
 
-        public void addTodo(string problemid,string index,string problemName,string Tag)
+        public void addTodo(string judge,string problemid,string index,string problemName,string Tag)
         {
-            MessageBox.Show(problemid);
-            MessageBox.Show(index);
-            MessageBox.Show(problemName);
-            MessageBox.Show(Tag);
+            MessageBox.Show("Add to list");
+            SqlConnection thisConnection = new SqlConnection(connection);
+            thisConnection.Open();
+
+            SqlDataAdapter thisAdapter = new SqlDataAdapter("SELECT * FROM problems", thisConnection);
+            SqlCommandBuilder thisBuilder = new SqlCommandBuilder(thisAdapter);
+            DataSet thisDataSet = new DataSet();
+            thisAdapter.Fill(thisDataSet, "problems");
+
+            DataRow thisRow = thisDataSet.Tables["problems"].NewRow();
+            try
+            {
+                thisRow["username"] = Session.getLoggedName();
+                thisRow["judge"] = judge;
+                thisRow["problemId"] = problemid;
+                thisRow["indx"] = index;
+                thisRow["problemname"] = problemName;
+                thisRow["tag"] = Tag;
+                thisDataSet.Tables["problems"].Rows.Add(thisRow);
+                thisAdapter.Update(thisDataSet, "problems");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            thisConnection.Close();
         }
 
 
