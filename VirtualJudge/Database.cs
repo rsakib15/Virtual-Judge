@@ -273,7 +273,7 @@ namespace VirtualJudge
                     username = (thisReader["username"].ToString());
                     Name = (thisReader["firstname"].ToString())+ (thisReader["lastname"].ToString());
                     cfID = thisReader["codeforcesID"].ToString();
-                    uvaid = thisReader["UVAID"].ToString();
+                    uvaid=thisReader["UVAID"].ToString();
                 }
                 thisConnection.Close();
 
