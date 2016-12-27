@@ -314,6 +314,14 @@ namespace VirtualJudge
             return c;
         }
 
+        public void addTodo(string problemid,string index,string problemName,string Tag)
+        {
+            MessageBox.Show(problemid);
+            MessageBox.Show(index);
+            MessageBox.Show(problemName);
+            MessageBox.Show(Tag);
+        }
+
 
     }
 }

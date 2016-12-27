@@ -21,6 +21,8 @@ namespace VirtualJudge
         private string URL;
         private string judge;
 
+        private string index;
+
         public ProblemDescription(string url,string judge)
         {
             this.URL = url;
@@ -54,7 +56,6 @@ namespace VirtualJudge
                 HtmlAgilityPack.HtmlDocument doc = web.Load(URL);
 
                 HtmlNodeCollection header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[1]");
-
 
                 metroLabel6.Text = header[0].InnerText.Remove(0, 3);
                 header = doc.DocumentNode.SelectNodes("//div[contains(@class,'header')]/div[2]");
@@ -101,10 +102,13 @@ namespace VirtualJudge
 
         private void metroPanel4_Click(object sender, EventArgs e)
         {
-            if (judge == "UVA")
+            Database d = new Database();
+
+            if (judge == "Codeforces")
             {
-                
+                d.addTodo("Codeforces", metroLabel6.Text, "A", "B");
             }
+            
             
 
         }
