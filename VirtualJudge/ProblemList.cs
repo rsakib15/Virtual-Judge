@@ -189,23 +189,14 @@ namespace VirtualJudge
                         str.Replace("\"", string.Empty)
 
                         );
-
                     }
-
                 }
-
             }
         }
-
-
-
-
 
         /// <summary>
         /// /*****************************************************************************************
         /// </summary>
-
-
 
         private void CounterUVA()
         {
@@ -236,9 +227,7 @@ namespace VirtualJudge
         private void InitialElements()
         {
             metroComboBox1.SelectedIndex = 0;
-        }
-
-        
+        }      
 
         private void ProblemUVA()
         {

@@ -144,6 +144,7 @@
             this.metroTile8.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile8.UseSelectable = true;
             this.metroTile8.UseTileImage = true;
+            this.metroTile8.Click += new System.EventHandler(this.metroTile8_Click);
             // 
             // metroTile7
             // 

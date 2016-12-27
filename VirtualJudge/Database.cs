@@ -35,8 +35,7 @@ namespace VirtualJudge
                 thisRow["email"] = email;
 
                 thisDataSet.Tables["users"].Rows.Add(thisRow);
-                thisAdapter.Update(thisDataSet, "users");
-                
+                thisAdapter.Update(thisDataSet, "users");              
             }
             catch (Exception ex)
             {
@@ -253,6 +252,36 @@ namespace VirtualJudge
                
             }          
             
+        }
+
+
+        public void getAlluserInformation(ref string username,ref string Name,ref string cfID,ref string uvaid)
+        {
+            try
+            {
+
+                SqlConnection thisConnection = new SqlConnection(connection);
+                thisConnection.Open();
+
+                SqlCommand thisCommand = new SqlCommand();
+                thisCommand.Connection = thisConnection;
+                thisCommand.CommandText = "SELECT users.username, users.firstname,users.lastname,accounts.codeforcesID,accounts.UVAID FROM users INNER JOIN accounts ON accounts.username = users.username";
+                SqlDataReader thisReader = thisCommand.ExecuteReader();
+
+                if (thisReader.Read())
+                {
+                    username = (thisReader["username"].ToString());
+                    Name = (thisReader["firstname"].ToString())+ (thisReader["lastname"].ToString());
+                    cfID = thisReader["codeforcesID"].ToString();
+                    uvaid = thisReader["UVAID"].ToString();
+                }
+                thisConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

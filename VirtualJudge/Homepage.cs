@@ -149,5 +149,12 @@ namespace VirtualJudge
             else
                 e.Cancel = (result == DialogResult.No);
         }
+
+        private void metroTile8_Click(object sender, EventArgs e)
+        {
+            Rank rank = new Rank();
+            rank.Show();
+            this.Hide();
+        }
     }
 }
