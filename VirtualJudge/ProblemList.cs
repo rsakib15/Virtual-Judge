@@ -43,7 +43,7 @@ namespace VirtualJudge
 
         private void CounterCodeforces()
         {
-            string Json = System.IO.File.ReadAllText("E:/MY_WORKPLACE/C#/VirtualJudge/problems/Codeforces.json");
+            string Json = System.IO.File.ReadAllText("C:/Users/Public/problems/Codeforces.json");
             JObject results = JObject.Parse(Json.ToString());
             JObject res = new JObject();
             Codeforcescount = results.SelectTokens("$.result.problems[*]").Count();
@@ -121,7 +121,7 @@ namespace VirtualJudge
 
         private void ProblemCodeforces()
         {
-            string Json = System.IO.File.ReadAllText("E:/MY_WORKPLACE/C#/VirtualJudge/problems/Codeforces.json");
+            string Json = System.IO.File.ReadAllText("C:/Users/Public/problems/Codeforces.json");
             JObject results = JObject.Parse(Json.ToString());
             JObject res = new JObject();
 
@@ -204,7 +204,7 @@ namespace VirtualJudge
 
         private void CounterUVA()
         {
-            string Json = System.IO.File.ReadAllText("E:/MY_WORKPLACE/C#/VirtualJudge/problems/UVA.json");
+            string Json = System.IO.File.ReadAllText("C:/Users/Public/problems/UVA.json");
             string JSarray_1 = @Json;
             JObject j = JObject.Parse("{\"problems\":" + JSarray_1 + "}");
 
@@ -237,7 +237,7 @@ namespace VirtualJudge
         {
             try
             {              
-                string Json = System.IO.File.ReadAllText("E:/MY_WORKPLACE/C#/VirtualJudge/problems/UVA.json");
+                string Json = System.IO.File.ReadAllText("C:/Users/Public/problems/UVA.json");
                 string JSarray_1 = @Json;
                 JObject j = JObject.Parse("{\"problems\":" + JSarray_1 + "}");
 
@@ -305,7 +305,7 @@ namespace VirtualJudge
             if (Judge == "Codeforces")
             {
                 bool found = false;
-                string Json = System.IO.File.ReadAllText("E:/MY_WORKPLACE/C#/VirtualJudge/problems/Codeforces.json");
+                string Json = System.IO.File.ReadAllText(@"C:/Users/Public/problems/Codeforces.json");
                 JObject results = JObject.Parse(Json.ToString());
 
                 JObject res = new JObject();
@@ -357,7 +357,7 @@ namespace VirtualJudge
             {
                 try
                 {
-                    string Json = System.IO.File.ReadAllText("E:/MY_WORKPLACE/C#/VirtualJudge/problems/UVA.json");
+                    string Json = System.IO.File.ReadAllText("C:/Users/Public/problems/UVA.json");
                     string JSarray_1 = @Json;
                     JObject j = JObject.Parse("{\"problems\":" + JSarray_1 + "}");
                     bool found = false;
